@@ -1,0 +1,15 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books list</title>
+</head>
+<body>
+<h1> Books list</h1>
+{% for books in books_list %}
+   <a href="{% url 'books_detail_page' books.pk %} ">
+       <li>{{books.title}}</li>
+   </a>
+{% endfor%}
+</body>
+</html>
