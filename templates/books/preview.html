@@ -1,0 +1,37 @@
+{% extends 'books/base.html' %}
+{% load static %}
+{% block title %}
+Sahifai asosi
+{% endblock title %}
+{% block content %}
+            <div class="tm-main-content no-pad-b">
+
+                    <div class="col-md-6 col-sm-12 mb-md-0 mb-5">
+                        <img src="{{book.image.url}}" alt="Image" class="img-fluid tm-img-center-sm" style="max-height:300px">
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <h2 class="tm-white-text tm-margin-b-p">{{book.title}} </h2>
+                        <p class="tm-margin-b-p">{{book.author}} </p>
+                        <p class="tm-margin-b-p"> published data: {{book.publish_time}} </p>
+                        <p class="tm-margin-b-p"> {{book.body | linebreaks}}</p>
+
+                    </div>
+            </div>
+        
+        <!-- load JS files -->
+        <script src="{% static 'js/jquery-1.11.3.min.js'%}"></script>         <!-- jQuery (https://jquery.com/download/) -->
+        <script src="{% static 'js/popper.min.js'%}"></script>                <!-- Popper (https://popper.js.org/) -->
+        <script src="{% static 'js/bootstrap.min.js'%}"></script>             <!-- Bootstrap (https://getbootstrap.com/) -->
+        <script>     
+       
+            $(document).ready(function(){
+                
+                // Update the current year in copyright
+                $('.tm-current-year').text(new Date().getFullYear());
+
+            });
+
+        </script>             
+
+{% endblock content %}

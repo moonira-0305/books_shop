@@ -31,3 +31,12 @@ def HomePageView(request):
       #  "authors":authors
     }
     return render(request, 'books/home.html', context)
+def contactPageView(request):
+    context={}
+    return render(request,'books/contact.html', context )
+def previewPageView(request,id):
+    book = get_object_or_404(Books, id=id, status=Books.Status.Published)
+    context = {
+        "book": book
+    }
+    return render(request,'books/preview.html', context )

@@ -23,7 +23,7 @@ class Books(models.Model):
     title=models.CharField(max_length=250)
     body=models.TextField()
     price=models.CharField(max_length=12)
-    image=models.ImageField(upload_to='books/images')
+    image=models.ImageField(upload_to='static/img')
     category=models.ForeignKey(Category,
                                on_delete=models.CASCADE)
     author=models.ForeignKey(Author,

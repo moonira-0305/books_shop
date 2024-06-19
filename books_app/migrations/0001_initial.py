@@ -34,7 +34,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=250)),
                 ('body', models.TextField()),
                 ('price', models.CharField(max_length=12)),
-                ('image', models.ImageField(upload_to='books/images')),
+                ('image', models.ImageField(upload_to='books/img')),
                 ('publish_time', models.DateTimeField(default=django.utils.timezone.now)),
                 ('created_time', models.DateTimeField(auto_now=True)),
                 ('updated_time', models.DateTimeField(auto_now=True)),
